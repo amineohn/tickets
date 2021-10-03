@@ -19,9 +19,9 @@ const Ticket = () => {
           <div className="flex flex-col justify-center px-8">
             <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16 dark:text-white">
               <PageTransition>
-                <div className="flex justify-center p-1.5">
-                  <p className="font-semibold text-3xl">Tickets</p>
-                </div>
+                <h1 className="pb-2 text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-t from-coolGray-900 to-warmGray-600 dark:bg-gradient-to-t dark:from-indigo-200 dark:to-indigo-400">
+                  Tickets
+                </h1>
                 <ReportTicket />
               </PageTransition>
             </div>
