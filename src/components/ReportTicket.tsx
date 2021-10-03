@@ -5,7 +5,7 @@ const ReportTicket = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitSuccessful },
   } = useForm();
 
   const [, setName] = useState("");
@@ -223,6 +223,40 @@ const ReportTicket = () => {
             >
               <span className="my-2 mr-1">Send</span>
             </button>
+            {isSubmitSuccessful && (
+              <PageTransition>
+                <span
+                  role="alert"
+                  className="text-green-500 font-medium inline-flex ml-2"
+                >
+                  <svg
+                    width="25"
+                    height="25"
+                    viewBox="0 0 80 80"
+                    fill="none"
+                    className="stroke-current text-green-500 stroke-2"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M22 20L22 68C22 70.2091 23.7909 72 26 72H54C56.2091 72 58 70.2091 58 68L58 20C58 17.7909 56.2091 16 54 16H26C23.7909 16 22 17.7909 22 20Z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M48 8H32"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M40 44.9995V34M40 54V53.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Message as been send
+                </span>
+              </PageTransition>
+            )}
           </div>
         </form>
       </div>
