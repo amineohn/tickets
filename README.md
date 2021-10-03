@@ -1,9 +1,9 @@
 <p align="center">
-  <a href="https://amine.im">
+  <a href="tickets-tan.vercel.app">
     <img src="https://amine.im/favicon.svg" height="96">
-    <h3 align="center">amine.im</h3>
+    <h3 align="center">Ticket System</h3>
   </a>
-  <p align="center">My Personal Portfolio Next.JS TailwindCSS</p>
+  <p align="center">Report related issue with computer</p>
 </p>
 
 ## Installation
