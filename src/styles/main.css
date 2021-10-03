@@ -1,0 +1,98 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+body {
+  @apply antialiased text-gray-700 bg-white select-none dark:bg-black;
+}
+
+.loader {
+  @apply border-t-indigo-300 dark:border-t-indigo-400;
+  -webkit-animation: spinner 1.5s linear infinite;
+  animation: spinner 1.5s linear infinite;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.svg-inline--fa {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  vertical-align: -0.125em;
+}
+.eq-bar {
+  transform: scale(1, -1) translate(0, -24px);
+}
+
+.eq-bar--1 {
+  animation-name: short-eq;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
+}
+
+.eq-bar--1 {
+  animation-name: short-eq;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
+}
+
+.eq-bar--2 {
+  animation-name: tall-eq;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.17s;
+}
+
+.eq-bar--3 {
+  animation-name: short-eq;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.34s;
+}
+
+@keyframes short-eq {
+  0% {
+    height: 8px;
+  }
+
+  50% {
+    height: 4px;
+  }
+
+  100% {
+    height: 8px;
+  }
+}
+
+@keyframes tall-eq {
+  0% {
+    height: 16px;
+  }
+
+  50% {
+    height: 6px;
+  }
+
+  100% {
+    height: 16px;
+  }
+}
