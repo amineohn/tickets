@@ -1,6 +1,6 @@
 export const AppConfig = {
-  site_name: 'Amine',
-  title: 'amine.im',
-  description: '',
-  locale: 'en',
+  site_name: "Tickets",
+  title: "TicketSystem",
+  description: "",
+  locale: "en",
 };
