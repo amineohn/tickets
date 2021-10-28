@@ -9,14 +9,5 @@ module.exports = withBundleAnalyzer({
   reactStrictMode: true,
 });
 module.exports = {
-  webpack5: false,
-  webpack: (config) => {
-    config.node = {
-      dns: "mock",
-      fs: "empty",
-      path: true,
-      url: false,
-    };
-    return config;
-  }
+  webpack5: true,
 };
