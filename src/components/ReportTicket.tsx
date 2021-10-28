@@ -13,7 +13,7 @@ const ReportTicket = () => {
   const [, setType] = useState("");
   const [, setMessage] = useState("");
 
-  const onTypeChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const onTypeChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setType(e.target.value);
   };
 
@@ -38,6 +38,17 @@ const ReportTicket = () => {
     <PageTransition>
       <div className="w-full max-w-2xl mx-auto">
         <form onSubmit={handleSubmit(onSubmit)}>
+          {isSubmitSuccessful && (
+            <PageTransition>
+              <div className="shadow-md p-2 flex flex-row rounded-lg animate-pulse justify-center">
+                <div className="bg-green-500 inline-block rounded-lg p-1 mr-1"></div>
+                <b className="p-1">Success</b>
+                <p className="p-1">
+                  Message as been send <span>&#128075;</span>
+                </p>
+              </div>
+            </PageTransition>
+          )}
           <div className="flex mb-4 -mx-2">
             <div className="w-1/2 px-2">
               <input
@@ -48,6 +59,7 @@ const ReportTicket = () => {
                 placeholder="First Name"
                 {...register("firstName", { required: true })}
               />
+
               {errors.firstName && (
                 <PageTransition>
                   <span
@@ -128,14 +140,16 @@ const ReportTicket = () => {
               )}
             </div>
             <div className="w-1/2 px-2">
-              <input
+              <select
                 onChange={onTypeChange}
                 className="block w-full px-4 py-3 leading-tight text-gray-700 transition rounded-md duration-200 appearance-none p-4 dark:bg-gray-900 hover:bg-gray-200 bg-gray-100 bg-opacity-50 dark:bg-opacity-50 md:bg-opacity-100 dark:text-white focus:outline-none dark:focus:bg-opacity-50 dark:focus:bg-gray-800 dark:placeholder-white"
-                type="text"
-                name="type"
-                placeholder="Type Issue"
                 {...register("type", { required: true })}
-              />
+              >
+                <option value="">Type Issue</option>
+                <option value="Problème Réseau">Problème Réseau</option>
+                <option value="Panne Informatique">Panne Informatique</option>
+                <option value="Autres">Autres</option>
+              </select>
               {errors.type && (
                 <PageTransition>
                   <span
@@ -219,44 +233,10 @@ const ReportTicket = () => {
           <div className="inline-flex items-center justify-center mb-1">
             <button
               aria-label="Submit"
-              className="inline-block px-5 py-2 m-0 font-semibold text-gray-50 transition rounded-md bg-opacity-50 bg-green-400 hover:bg-green-500 duration-150 dark:text-white"
+              className="inline-block px-5 py-2 m-0 font-semibold text-gray-50 transition rounded-md bg-opacity-50 bg-purple-400 hover:bg-purple-500 duration-150 dark:text-white"
             >
               <span className="my-2 mr-1">Send</span>
             </button>
-            {isSubmitSuccessful && (
-              <PageTransition>
-                <span
-                  role="alert"
-                  className="text-green-500 font-medium inline-flex ml-2"
-                >
-                  <svg
-                    width="25"
-                    height="25"
-                    viewBox="0 0 80 80"
-                    fill="none"
-                    className="stroke-current text-green-500 stroke-2"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M22 20L22 68C22 70.2091 23.7909 72 26 72H54C56.2091 72 58 70.2091 58 68L58 20C58 17.7909 56.2091 16 54 16H26C23.7909 16 22 17.7909 22 20Z"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M48 8H32"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M40 44.9995V34M40 54V53.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  Message as been send
-                </span>
-              </PageTransition>
-            )}
           </div>
         </form>
       </div>

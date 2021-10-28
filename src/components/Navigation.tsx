@@ -10,13 +10,13 @@ const Navigation = () => {
           onClick={() => router.push("/")}
           className="p-1 font-medium text-gray-900 transition cursor-pointer sm:p-4 sm:pb-1.5 sm:pt-1.5 rounded-full dark:text-gray-100 hover:text-indigo-400 dark:hover:text-indigo-300"
         >
-          Ticket
+          <span>&#128073;</span>Ticket
         </a>
         <a
           onClick={() => router.push("/follow-ups")}
           className="p-1 font-medium text-gray-900 transition cursor-pointer sm:p-4 sm:pb-1.5 sm:pt-1.5 rounded-full dark:text-gray-100 hover:text-indigo-400 dark:hover:text-indigo-300"
         >
-          Follow-ups
+          <span>&#128073;</span> Follow-ups
         </a>
       </div>
     </div>
